@@ -13,7 +13,6 @@ function init() {
 }
 
 function isItTrademarked() {
-    // isDomainAvailable();
 
     fetch("https://uspto-trademark.p.rapidapi.com/v1/trademarkAvailable/" + queryInput, {
         "method": "GET",
@@ -38,7 +37,10 @@ function isItTrademarked() {
 }
 
 function isDomainAvailable() {
-    var requestUrl = 'https://domain-availability.whoisxmlapi.com/api/v1?apiKey=at_20p8HWePpxdOdgfSS2c42tVKGNMRB&domainName=' + queryInput + '.com&credits=DA';
+
+    queryInputString = queryInput.replace(/%20/g, "");
+
+    var requestUrl = 'https://domain-availability.whoisxmlapi.com/api/v1?apiKey=at_20p8HWePpxdOdgfSS2c42tVKGNMRB&domainName=' + queryInputString + '.com&credits=DA';
 
     fetch(requestUrl)
         .then(function (response) {
