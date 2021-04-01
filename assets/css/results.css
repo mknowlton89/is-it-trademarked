@@ -20,7 +20,7 @@ body {
 
 h1 {
     font-size: 40px;
-    text-align: center;
+    text-align: left;
 }
 
 /* form {
@@ -57,6 +57,7 @@ h1 {
     background-color: var(--lightsalmon);
     font-weight: 400;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .btn-primary:hover {
@@ -70,34 +71,33 @@ h1 {
 
 .results-page {
     display: flex;
-    height: 100vh;
 }
 
 .left-container {
     width: 30%;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 100px;
 }
 
 .right-container {
     width: 70%;
     display: flex;
+    background-color: white;
+    height: 100vh;
 }
 
 #query-input {
     border: none;
     border-radius: 30px;
     height: 60px;
-    width: 800px;
+    width: 365px;
     padding-left:30px;
 }
 
 #query-input:focus {
     outline: none;
 }
-
-@media only screen and (max-width: 1249px) {
-    .btn-primary {
-        margin-top: 20px;
-    }
-  }
