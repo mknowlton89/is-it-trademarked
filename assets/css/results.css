@@ -12,10 +12,9 @@
 
 body {
     margin: 0;
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
     background-color: var(--lightgray);
-    /* height: 100vh; */
 }
 
 
@@ -24,6 +23,9 @@ h1 {
     text-align: center;
 }
 
+/* form {
+    width: 75vh;
+} */
 
 .main-container {
     display:flex;
@@ -32,6 +34,9 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* background-color: red; */
 }
 
 .form-wrapper {
@@ -61,6 +66,22 @@ h1 {
     border-color: var(--lightsalmon);
     background-color: var(--lightgray);
     
+}
+
+.results-page {
+    display: flex;
+    height: 100vh;
+}
+
+.left-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-container {
+    width: 70%;
+    display: flex;
 }
 
 #query-input {
