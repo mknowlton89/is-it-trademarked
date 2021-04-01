@@ -12,13 +12,15 @@ function redirectUser(event) {
 
     redirectUrl = redirectUrl + "?" + queryInput.val();
 
-    document.location.replace(redirectUrl);
+    queryInput.val('');
+
+    document.location.assign(redirectUrl);
 
 }
 
 
 // Event Listeners
-queryForm.on("submit", redirectUser);
+submitBtn.on("click", redirectUser);
 
 
 // Function Calls

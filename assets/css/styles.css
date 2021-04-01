@@ -1,0 +1,85 @@
+:root {
+    --lightgray: #F9F7F3;
+    --lightsalmon: #F7A072;
+}
+
+
+
+* {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: var(--lightgray);
+}
+
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+/* form {
+    width: 75vh;
+} */
+
+.main-container {
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-color: red; */
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.btn-primary {
+    border: none;
+    border-radius: 30px;
+    padding: 5px 40px 5px 40px;
+    margin-left: 20px;
+    height: 60px;
+    background-color: var(--lightsalmon);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transition: 100ms;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--lightsalmon);
+    background-color: var(--lightgray);
+    
+}
+
+#query-input {
+    border: none;
+    border-radius: 30px;
+    height: 60px;
+    width: 800px;
+    padding-left:30px;
+}
+
+#query-input:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 1249px) {
+    .btn-primary {
+        margin-top: 20px;
+    }
+  }
