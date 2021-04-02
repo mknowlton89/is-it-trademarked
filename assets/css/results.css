@@ -90,6 +90,11 @@ h1 {
     height: 100vh;
 }
 
+.headline {
+    display: flex;
+    justify-content: center;
+}
+
 #query-input {
     border: none;
     border-radius: 30px;
