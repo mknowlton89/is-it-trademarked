@@ -37,14 +37,12 @@ function init() {
 
         // searchHistoryListItem.attr("id", i);
         // searchHistoryListItem.attr("value", searchHistory[i]);
-        searchHistoryListLink.attr("href", "file:///Users/mknowlton/gt/sandbox/trademark-test/results.html?" + searchHistory[i]);
+        searchHistoryListLink.attr("href", "./results.html?" + searchHistory[i]);
 
         // Append the list item to the list.
         searchHistoryList.append(searchHistoryListItem);
         searchHistoryListItem.append(searchHistoryListLink);
     }
-
-    // console.log($('#0')[0].attributes.value.textContent);
 
     // isItTrademarked();
 }
