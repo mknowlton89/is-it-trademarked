@@ -1,15 +1,47 @@
 // DOM Variables
 const documentLocation = document.location.search;
 const queryInput = documentLocation.split("?")[1];
-let trademarkUrl = "https://uspto-trademark.p.rapidapi.com/v1/trademarkAvailable/" + queryInput;
 
-console.log(queryInput);
 
 // JS variables
+let trademarkUrl = "https://uspto-trademark.p.rapidapi.com/v1/trademarkAvailable/" + queryInput;
 
 // Function Definitions
 function init() {
-    isItTrademarked();
+
+    // Get local storage
+    searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+
+    console.log(searchHistory);
+
+    // Create a div to hold the local storage
+    const searchHistoryDiv = $("<div>");
+
+    // Create a headline for the DIV
+    const searchHistoryH4 = $('<h4>').text("Search History");
+
+    // Create an un-ordered list for the search history
+    const searchHistoryList = $('<ul>');
+
+    // Append everything to the page
+    $('#left-container').append(searchHistoryDiv);
+    searchHistoryDiv.append(searchHistoryH4);
+    searchHistoryDiv.append(searchHistoryList);
+
+    // Create a for-loop to build out the full search history
+    for (let i = 0; i < searchHistory.length; i++) {
+        // Get the item in the array, create a list element, and then give it text.
+        const searchHistoryListItem = $('<li>').text(searchHistory[i]);
+
+        // Append the list item to the list.
+        searchHistoryList.append(searchHistoryListItem);
+    }
+
+
+
+
+
+    // isItTrademarked();
 }
 
 function isItTrademarked() {
@@ -22,11 +54,11 @@ function isItTrademarked() {
         }
     })
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
 
 
 
