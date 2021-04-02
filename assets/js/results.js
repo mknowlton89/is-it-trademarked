@@ -22,6 +22,7 @@ function init() {
 
     // Create an un-ordered list for the search history
     const searchHistoryList = $('<ul>');
+    searchHistoryList.attr("id", "searchHistory");
 
     // Append everything to the page
     $('#left-container').append(searchHistoryDiv);
@@ -31,15 +32,19 @@ function init() {
     // Create a for-loop to build out the full search history
     for (let i = 0; i < searchHistory.length; i++) {
         // Get the item in the array, create a list element, and then give it text.
-        const searchHistoryListItem = $('<li>').text(searchHistory[i]);
+        let searchHistoryListItem = $('<li>');
+        let searchHistoryListLink = $('<a>').text(searchHistory[i]);
+
+        // searchHistoryListItem.attr("id", i);
+        // searchHistoryListItem.attr("value", searchHistory[i]);
+        searchHistoryListLink.attr("href", "file:///Users/mknowlton/gt/sandbox/trademark-test/results.html?" + searchHistory[i]);
 
         // Append the list item to the list.
         searchHistoryList.append(searchHistoryListItem);
+        searchHistoryListItem.append(searchHistoryListLink);
     }
 
-
-
-
+    // console.log($('#0')[0].attributes.value.textContent);
 
     // isItTrademarked();
 }
@@ -167,7 +172,6 @@ function isDomainAvailable() {
 }
 
 // Event Listeners
-
 
 
 // Function Calls
