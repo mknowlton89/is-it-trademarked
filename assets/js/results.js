@@ -44,7 +44,7 @@ function init() {
         searchHistoryListItem.append(searchHistoryListLink);
     }
 
-    // isItTrademarked();
+    isItTrademarked();
 }
 
 function isItTrademarked() {
@@ -63,7 +63,9 @@ function isItTrademarked() {
         .then(function (data) {
             // console.log(data);
 
-
+            if ($('#trademark-results').hasClass('hidden')) {
+                $('#trademark-results').toggleClass('hidden');
+            }
 
             if (data[0].available === "yes") {
 
@@ -93,9 +95,11 @@ function lookupWhoIs() {
     // alert("lookupWhoIs was called");
     queryInputString = queryInput.replace(/%20/g, "");
 
-    https://website-contacts.whoisxmlapi.com/api/v1?apiKey=at_20p8HWePpxdOdgfSS2c42tVKGNMRB&domainName=cnn.com
-
     var requestUrl = 'https://website-contacts.whoisxmlapi.com/api/v1?apiKey=at_20p8HWePpxdOdgfSS2c42tVKGNMRB&domainName=' + queryInputString + '.com';
+
+    if ($('#whois-results').hasClass('hidden')) {
+        $('#whois-results').toggleClass('hidden');
+    };
 
     fetch(requestUrl)
         .then(function (response) {
@@ -131,7 +135,11 @@ function isDomainAvailable() {
 
     queryInputString = queryInput.replace(/%20/g, "");
 
-    var requestUrl = 'https://domain-availability.whoisxmlapi.com/api/v1?apiKey=at_20p8HWePpxdOdgfSS2c42tVKGNMRB&domainName=' + queryInputString + '.com&credits=DA';
+    var requestUrl = 'https://domain-availability.whoisxmlapi.com/api/v1?apiKey=at_dvdglXk3z5EnThTPZGjM59oma9dZF&domainName=' + queryInputString + '.com&credits=DA';
+
+    if ($('#domain-results').hasClass('hidden')) {
+        $('#domain-results').toggleClass('hidden');
+    };
 
     fetch(requestUrl)
         .then(function (response) {

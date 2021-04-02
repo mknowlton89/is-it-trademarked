@@ -1,6 +1,8 @@
 :root {
     --lightgray: #F9F7F3;
     --lightsalmon: #F7A072;
+    --darkslategray: #2A4747;
+    --bluecrayola: #3772FF;
 }
 
 
@@ -21,6 +23,16 @@ body {
 h1 {
     font-size: 40px;
     text-align: left;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+a:hover {
+    color: var(--bluecrayola);
 }
 
 /* form {
@@ -88,11 +100,16 @@ h1 {
     display: flex;
     background-color: white;
     height: 100vh;
+    flex-direction: column;
 }
 
 .headline {
     display: flex;
     justify-content: center;
+}
+
+.hidden {
+    display: none;
 }
 
 #query-input {
@@ -105,4 +122,8 @@ h1 {
 
 #query-input:focus {
     outline: none;
+}
+
+#trademark-results, #domain-results, #whois-results {
+    border: solid;
 }
